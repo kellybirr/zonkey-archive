@@ -1,0 +1,225 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{3D086107-92BC-4E25-A4C6-9BE3239CDDBC}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Zonkey</RootNamespace>
+    <AssemblyName>Zonkey42c</AssemblyName>
+    <SignAssembly>true</SignAssembly>
+    <AssemblyOriginatorKeyFile>Zonkey42.snk</AssemblyOriginatorKeyFile>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <RunCodeAnalysis>false</RunCodeAnalysis>
+    <CodeAnalysisRules>
+    </CodeAnalysisRules>
+    <DocumentationFile>
+    </DocumentationFile>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>none</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <RunCodeAnalysis>false</RunCodeAnalysis>
+    <CodeAnalysisRules>
+    </CodeAnalysisRules>
+    <DocumentationFile>..\bin\Zonkey42c.xml</DocumentationFile>
+    <CodeAnalysisRuleSet>SecurityRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisIgnoreGeneratedCode>false</CodeAnalysisIgnoreGeneratedCode>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AdapterBase.cs" />
+    <Compile Include="ConfigEnv.cs" />
+    <Compile Include="Conflict.cs" />
+    <Compile Include="ConnectionManagers\ConnectionManager.cs" />
+    <Compile Include="ConnectionManagers\ConnectionStringHelper.cs" />
+    <Compile Include="ConnectionManagers\Specialized\BaseConnectionManager.cs" />
+    <Compile Include="ConnectionManagers\Specialized\ConnectionManagerContext.cs" />
+    <Compile Include="ConnectionManagers\Specialized\SingleConnectionManager.cs" />
+    <Compile Include="ConnectionManagers\Specialized\ThreadedConnectionManager.cs" />
+    <Compile Include="ConnectionManagers\TransactionContext.cs" />
+    <Compile Include="DataClassAdapter\Base.cs" />
+    <Compile Include="DataClassAdapter\Exists.cs" />
+    <Compile Include="DataClassAdapter\InnerJoin.cs" />
+    <Compile Include="DataClassAdapter\Conflicts.cs" />
+    <Compile Include="DataClassAdapter\BulkInsert.cs" />
+    <Compile Include="DataClassAdapter\BulkUpdate.cs" />
+    <Compile Include="DataClassAdapter\GetCount.cs" />
+    <Compile Include="DataClassAdapter\FillRange.cs" />
+    <Compile Include="DataClassAdapter\GetSingleItem.cs" />
+    <Compile Include="DataClassAdapter\OpenReader.cs" />
+    <Compile Include="DataClassAdapter\Populate.cs" />
+    <Compile Include="DataClassAdapter\UpdateRows.cs" />
+    <Compile Include="DataListAdapter.cs" />
+    <Compile Include="DataTableAdapter.cs" />
+    <Compile Include="DataTableCommandBuilder.cs" />
+    <Compile Include="DbConnectionFactory.cs" />
+    <Compile Include="DbTransactionRegistry.cs" />
+    <Compile Include="Dialects\AnsiSqlDialect.cs" />
+    <Compile Include="Dialects\Db2SqlDialect.cs" />
+    <Compile Include="Dialects\OracleSqlDialect.cs" />
+    <Compile Include="Dialects\GenericSqlDialect.cs" />
+    <Compile Include="Dialects\MySqlDialect.cs" />
+    <Compile Include="Dialects\AccessSqlDialect.cs" />
+    <Compile Include="Dialects\PostgrSqlDialect.cs" />
+    <Compile Include="Dialects\SqlDialect.cs" />
+    <Compile Include="Dialects\SqlServerDialect.cs" />
+    <Compile Include="Events.cs" />
+    <Compile Include="DataClassAdapter\FillAsync.cs" />
+    <Compile Include="Exceptions.cs" />
+    <Compile Include="GlobalSuppressions.cs" />
+    <Compile Include="Linq\SqlFilterExtensions.cs" />
+    <Compile Include="Linq\SqlInHelper.cs" />
+    <Compile Include="Mocks\MockDbCommand.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Mocks\MockDbConnection.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Mocks\MockDbDataReader.cs" />
+    <Compile Include="Mocks\MockDbParameter.cs" />
+    <Compile Include="Mocks\MockDbParameterCollection.cs" />
+    <Compile Include="Mocks\MockDbTransaction.cs" />
+    <Compile Include="ObjectModel\BindableCollection.cs">
+    </Compile>
+    <Compile Include="ObjectModel\ClassFactory.cs" />
+    <Compile Include="ObjectModel\DatabaseWrapper.cs" />
+    <Compile Include="ObjectModel\DataClassCommandBuilder\UpdateRows.cs" />
+    <Compile Include="ObjectModel\SaveAuditor.cs" />
+    <Compile Include="ObjectModel\DataClassReader.cs" />
+    <Compile Include="ObjectModel\DataMap.cs" />
+    <Compile Include="ObjectModel\DataMapItem.cs" />
+    <Compile Include="ObjectModel\DataMapField.cs" />
+    <Compile Include="ObjectModel\DataComponent.cs" />
+    <Compile Include="ObjectModel\DataFieldAttribute.cs" />
+    <Compile Include="ObjectModel\DataItemAttribute.cs" />
+    <Compile Include="DataManager.cs" />
+    <Compile Include="DataListItem.cs" />
+    <Compile Include="DataClassAdapter\Common.cs" />
+    <Compile Include="DataClassAdapter\Delete.cs" />
+    <Compile Include="DataClassAdapter\Fill.cs" />
+    <Compile Include="ObjectModel\DataClassCollection.cs" />
+    <Compile Include="DataClassAdapter\Save.cs" />
+    <Compile Include="ObjectModel\DataClass.cs">
+    </Compile>
+    <Compile Include="ObjectModel\DataClassCommandBuilder\Common.cs" />
+    <Compile Include="ObjectModel\DataClassCommandBuilder\Select.cs" />
+    <Compile Include="ObjectModel\DataClassCommandBuilder\Insert.cs" />
+    <Compile Include="ObjectModel\DataClassCommandBuilder\Update.cs" />
+    <Compile Include="ObjectModel\DataClassCommandBuilder\Delete.cs" />
+    <Compile Include="Enumerations.cs" />
+    <Compile Include="GenericParameter.cs" />
+    <Compile Include="ObjectModel\DataClassCommandBuilder\Update2.cs" />
+    <Compile Include="ObjectModel\DCAdapterBase.cs" />
+    <Compile Include="ObjectModel\FieldValuesDictionary.cs" />
+    <Compile Include="ObjectModel\ListSorter.cs" />
+    <Compile Include="ObjectModel\Interfaces.cs" />
+    <Compile Include="ObjectModel\PropertyComparer.cs" />
+    <Compile Include="ObjectModel\WhereExpressionParser.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Recordset.cs" />
+    <Compile Include="ResultTypes.cs" />
+    <Compile Include="SqlFilter.cs" />
+    <Compile Include="SqlXmlAdapter.cs" />
+    <Compile Include="Text\CsvReader.cs" />
+    <Compile Include="Text\TextClassRWBase.cs" />
+    <Compile Include="Text\TextClassWriter.cs" />
+    <Compile Include="Text\TextRecord.cs" />
+    <Compile Include="Text\TextClassReader.cs" />
+    <Compile Include="Text\TextField.cs" />
+    <Compile Include="Utility\SqlScriptProcessor.cs" />
+    <Compile Include="XmlAdapter.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Xml\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Zonkey42.snk" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <PropertyGroup>
+    <PreBuildEvent>
+    </PreBuildEvent>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+</Project>
